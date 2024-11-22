@@ -7,22 +7,29 @@
 
 body {
   font-family: "Arial", sans-serif;
-  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  background: linear-gradient(
+    135deg,
+    #ff758c,
+    #ff7eb3
+  ); /* Soft pink to love-red gradient */
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
+  margin: 0;
 }
 
 .container {
   text-align: center;
   padding: 20px;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  width: 80%;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.4); /* Semi-transparent white background */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
   max-width: 600px;
+  backdrop-filter: blur(10px);
 }
 
 h1 {
@@ -30,30 +37,39 @@ h1 {
   margin-bottom: 20px;
   font-weight: bold;
   letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
   animation: fadeIn 1s ease-in-out;
 }
 
 p {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: 1.4rem;
+  margin-bottom: 30px;
   line-height: 1.6;
-  animation: fadeIn 1s ease-in-out;
+  color: #fff;
+  font-style: italic;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 button {
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  background: #ff6f61;
+  font-size: 1.3rem;
+  padding: 15px 30px;
+  background: #ff4d77; /* Love-themed red */
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
   transition: background 0.3s ease;
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 2s ease-in-out;
+  font-weight: bold;
 }
 
 button:hover {
-  background: #e85d4f;
+  background: #ff2a56; /* Slightly darker red on hover */
+}
+
+button:active {
+  transform: scale(0.98); /* A slight "click" effect */
 }
 
 /* Fade-in animation */
@@ -65,5 +81,72 @@ button:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Add heart shape animation */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+button {
+  animation: heartbeat 1s ease-in-out infinite;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Small screens (mobile devices) */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 12px 25px;
+  }
+}
+
+/* Medium screens (tablets) */
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+
+  button {
+    font-size: 1.2rem;
+    padding: 13px 28px;
+  }
+}
+
+/* Larger screens (desktop) */
+@media screen and (min-width: 1025px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+
+  button {
+    font-size: 1.3rem;
+    padding: 15px 30px;
   }
 }
